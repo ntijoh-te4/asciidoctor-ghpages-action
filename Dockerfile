@@ -5,6 +5,7 @@ FROM asciidoctor/docker-asciidoctor:latest
 COPY entrypoint.sh /entrypoint.sh
 
 RUN apk update && apk add --update openssh-client git-lfs
+RUN gem install --no-document --prerelease asciidoctor-tabs
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
